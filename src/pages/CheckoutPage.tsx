@@ -3,14 +3,18 @@ import { ArrowLeft, CreditCard } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Popup } from '../components/Popup';
 import { QuantitySelector } from '../components/QuantitySelector';
+import { FacebookPixel } from '../utils/facebookPixel';
+
 export const CheckoutPage = () => {
   const location = useLocation();
   const [quantity, setQuantity] = useState(1);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   // Set the document title
   useEffect(() => {
     document.title = 'Moonrise Natural';
   }, []);
+
   // Get quantity from location state or localStorage if available
   useEffect(() => {
     // First try to get from location state
@@ -27,6 +31,19 @@ export const CheckoutPage = () => {
       }
     }
   }, [location.state]);
+
+  // Track InitiateCheckout event when page loads
+  useEffect(() => {
+    const unitPrice = 68.0;
+    const shippingCost = 7.95;
+    const subtotal = unitPrice * quantity;
+    const isFreeShipping = subtotal >= 99;
+    const actualShippingCost = isFreeShipping ? 0 : shippingCost;
+    const total = subtotal + actualShippingCost;
+    
+    FacebookPixel.trackInitiateCheckout(quantity, total);
+  }, [quantity]);
+
   // Price calculations
   const unitPrice = 68.0;
   const shippingCost = 7.95;
@@ -34,20 +51,31 @@ export const CheckoutPage = () => {
   const isFreeShipping = subtotal >= 99;
   const actualShippingCost = isFreeShipping ? 0 : shippingCost;
   const total = subtotal + actualShippingCost;
+
   const increaseQuantity = () => {
     const newQuantity = Math.min(quantity + 1, 10);
     setQuantity(newQuantity);
     localStorage.setItem('moonriseQuantity', newQuantity.toString());
   };
+
   const decreaseQuantity = () => {
     const newQuantity = Math.max(quantity - 1, 1);
     setQuantity(newQuantity);
     localStorage.setItem('moonriseQuantity', newQuantity.toString());
   };
+
   const handlePaymentClick = () => {
+    // Track when user clicks a payment method
+    FacebookPixel.trackCustomEvent('AddPaymentInfo', {
+      content_name: 'Moonrise Natural Cleaning Concentrate',
+      value: total,
+      currency: 'USD',
+    });
     setIsPopupOpen(true);
   };
-  return <div className="min-h-screen bg-gray-50">
+
+  return (
+    <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm py-4">
         <div className="container mx-auto px-4">
           <Link to="/" className="flex items-center text-[#2C5F2D] font-medium">
@@ -138,5 +166,6 @@ export const CheckoutPage = () => {
         </div>
       </main>
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
-    </div>;
+    </div>
+  );
 };

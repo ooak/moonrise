@@ -3,12 +3,17 @@ import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { QuantitySelector } from './QuantitySelector';
 import { ProductCarousel } from './ProductCarousel';
+import { FacebookPixel } from '../utils/facebookPixel';
 export const ProductHero = () => {
   const [quantity, setQuantity] = useState(1);
   // Store quantity in localStorage when it changes
   useEffect(() => {
     localStorage.setItem('moonriseQuantity', quantity.toString());
   }, [quantity]);
+  // Track product view when component mounts
+   useEffect(() => {
+     FacebookPixel.trackViewContent('Moonrise Natural Cleaning Concentrate', 68.0);
+   }, []);
   // Price calculations
   const unitPrice = 68.0;
   const originalPrice = 75.0;
@@ -71,9 +76,12 @@ export const ProductHero = () => {
             </label>
             <QuantitySelector quantity={quantity} onIncrease={increaseQuantity} onDecrease={decreaseQuantity} />
           </div>
-          <Link to="/checkout" className="inline-block w-full md:w-auto bg-[#2C5F2D] hover:bg-[#234a24] text-white font-bold py-3 px-8 rounded-md transition duration-300 mb-4 text-center" state={{
-          quantity
-        }}>
+          <Link 
+               to="/checkout" 
+               className="inline-block w-full md:w-auto bg-[#2C5F2D] hover:bg-[#234a24] text-white font-bold py-3 px-8 rounded-md transition duration-300 mb-4 text-center" 
+               state={{ quantity }}
+                onClick={() => FacebookPixel.trackAddToCart(quantity, totalPrice)}
+           > 
             {quantity === 1 ? 'RESERVE YOUR BOTTLE NOW' : `RESERVE ${quantity} BOTTLES NOW`}
           </Link>
           <p className="text-sm text-gray-600">

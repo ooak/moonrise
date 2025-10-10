@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { EmailSubscriptionService } from '../services/EmailSubscriptionService';
+import { FacebookPixel } from '../utils/facebookPixel';
+
 interface EmailFormProps {
   onSubscribed?: () => void;
 }
+
 export const EmailForm: React.FC<EmailFormProps> = ({
   onSubscribed
 }) => {
@@ -10,6 +13,7 @@ export const EmailForm: React.FC<EmailFormProps> = ({
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
@@ -17,18 +21,27 @@ export const EmailForm: React.FC<EmailFormProps> = ({
       setStatus('error');
       return;
     }
+
     setIsSubmitting(true);
+    
     // Save the email
     const result = EmailSubscriptionService.saveEmail(email);
+
     setIsSubmitting(false);
     setMessage(result.message);
     setStatus(result.success ? 'success' : 'error');
+
     if (result.success) {
+      // Track successful lead/subscription with Facebook Pixel
+      FacebookPixel.trackLead(email);
+      
       setEmail('');
       if (onSubscribed) {
         onSubscribed();
       }
     }
+  };
+
   return <div className="w-full">
       <form onSubmit={handleSubmit}>
         <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email address" className="w-full border border-gray-300 rounded-md px-3 py-2 mb-3" disabled={isSubmitting} />
