@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-window.fbq('init', '844531991375402');
+window.fbq('init', '1734437306869993');
 window.fbq('track', 'PageView');
 
 import React from 'react';
