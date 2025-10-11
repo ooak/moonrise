@@ -4,18 +4,15 @@ export const ValueProposition = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#333333]">
-            Why Health-Conscious Families Trust Moonrise
+            Why Health-Conscious Families Trust Moonrise?
           </h2>
           <p className="text-gray-700 mb-6">
-            You shouldn't have to choose between a clean home and a healthy
-            home. Most cleaners—even "natural" ones—either don't work well or
-            trigger headaches and breathing problems. That's because they
-            release chemicals into your air every time you clean.
+            Because we're as obsessed with transparency as you are.
+            Join the thousands of families who have stopped living in fear of their cleaning routine. 
+            With Moonrise, you'll finally experience what it's like to clean without compromise—no headaches, no respiratory distress, no chemical sensitivity triggers, and definitely no wondering what's in the bottle.
           </p>
           <p className="text-gray-700 mb-6">
-            Moonrise is different. It releases zero harmful fumes while cleaning
-            just as powerfully as harsh chemicals. It tackles grease, mold, soap
-            scum, and hard water stains without polluting the air you breathe.
+            This is what over-researched ingredient labels and years of disappointment have been leading you toward: a truly safe, actually effective cleaning solution that's been independently verified so you can finally stop second-guessing every product under your sink.
           </p>
           <p className="text-gray-700 mb-6">
             Made in the US and tested by independent labs, Moonrise is truly

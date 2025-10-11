@@ -16,7 +16,7 @@ export const ProductHero = () => {
    }, []);
   // Price calculations
   const unitPrice = 68.0;
-  const originalPrice = 75.0;
+  const originalPrice = 79.99;
   const totalPrice = unitPrice * quantity;
   const totalOriginalPrice = originalPrice * quantity;
   const savings = totalOriginalPrice - totalPrice;
@@ -43,10 +43,10 @@ export const ProductHero = () => {
         </div>
         <div className="order-2 md:order-2">
           <div className="mb-2 text-sm text-[#2C5F2D] font-semibold">
-            Professional-Grade Natural Cleaning Concentrate
+            Finally: Professional-Grade Cleaning That Won't Make Your Family Sick
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#333333]">
-            Moonrise™ Natural Cleaning Concentrate
+            Moonrise Natural™ Human-Safe Cleaning Concentrate
           </h1>
           <div className="flex items-center mb-4">
             {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#D4A574" color="#D4A574" />)}
@@ -55,7 +55,8 @@ export const ProductHero = () => {
             </span>
           </div>
           <h3 className="text-xl font-semibold text-[#D4A574] mb-3">
-            Why Buy 15 Bottles When You Need Just One?
+            One 32oz concentrate = 3 gallons of powerful cleaning solution
+            Less than $1 per use. Replaces $150+ worth of conventional cleaners.
           </h3>
           <div className="mb-6">
             <div className="flex items-end mb-2">
@@ -85,10 +86,9 @@ export const ProductHero = () => {
             {quantity === 1 ? 'RESERVE YOUR BOTTLE NOW' : `RESERVE ${quantity} BOTTLES NOW`}
           </Link>
           <p className="text-sm text-gray-600">
-            Try Moonrise risk-free for 60 days. If you experience ANY headaches,
-            respiratory issues, or chemical sensitivity reactions—or if it
-            doesn't outperform your conventional cleaner on tough messes—return
-            it for a full refund.
+           Each 16 oz bottle makes 3 gallons of powerful, human-safe cleaner. 
+           No VOCs, no endocrine disruptors, no synthetic fragrances. 
+           If it doesn't outperform your conventional cleaners on tough grease, mold, and soap scum—we'll refund every penny.
           </p>
         </div>
       </div>
