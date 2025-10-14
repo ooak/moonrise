@@ -24,7 +24,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
     setCurrentIndex(slideIndex);
   };
   return <div className="relative w-full h-full">
-      <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] flex items-center justify-center overflow-hidden rounded-lg p-2">
+      <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] flex items-center justify-center overflow-hidden rounded-lg p-2">
         <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="w-auto h-auto max-w-full max-h-full object-contain" />
         {/* Left Arrow */}
         <div className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-1 cursor-pointer shadow-md z-10" onClick={goToPrevious}>

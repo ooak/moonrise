@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductCarousel.tsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ProductCarousel.tsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductHero.tsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ProductHero.tsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -31,19 +35,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductCarousel.tsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductCarousel.tsx",
+              "RelativeDocumentMoniker": "src\\components\\ProductCarousel.tsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductCarousel.tsx",
+              "RelativeToolTip": "src\\components\\ProductCarousel.tsx",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-10-14T13:56:18.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProductHero.tsx",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductHero.tsx",
               "RelativeDocumentMoniker": "src\\components\\ProductHero.tsx",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductHero.tsx",
               "RelativeToolTip": "src\\components\\ProductHero.tsx",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAowFgAAAASAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAvwBsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-10-14T13:39:32.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Header.tsx",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\Header.tsx",
               "RelativeDocumentMoniker": "src\\components\\Header.tsx",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "src\\components\\Header.tsx",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-10-14T13:39:03.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T13:39:03.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ValueProposition.tsx",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ValueProposition.tsx",
               "RelativeDocumentMoniker": "src\\components\\ValueProposition.tsx",
@@ -64,12 +80,11 @@
               "RelativeToolTip": "src\\components\\ValueProposition.tsx",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAEQAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-10-11T15:20:23.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-11T15:20:23.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProductDetails.tsx",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u200F\u200F\u05EA\u05D9\u05E7\u05D9\u05D4 \u05D7\u05D3\u05E9\u05D4\\src\\components\\ProductDetails.tsx",
               "RelativeDocumentMoniker": "src\\components\\ProductDetails.tsx",

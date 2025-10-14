@@ -25,7 +25,7 @@ export const ProductHero = () => {
   const decreaseQuantity = () => setQuantity(prev => Math.max(prev - 1, 1));
   // Product images for the carousel
   const productImages = [{
-    src: "/pic2.png",
+    src: "/pic3.png",
     alt: 'Moonrise Natural Cleaning Concentrate bottle close-up'
   }, {
     src: "/pic_1.png",
