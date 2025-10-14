@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\components\\Header.tsx",
   "PreviewInSolutionExplorer": false
 }

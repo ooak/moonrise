@@ -86,7 +86,7 @@ export const ProductHero = () => {
             {quantity === 1 ? 'RESERVE YOUR BOTTLE NOW' : `RESERVE ${quantity} BOTTLES NOW`}
           </Link>
           <p className="text-sm text-gray-600">
-           Each 16 oz bottle makes 3 gallons of powerful, human-safe cleaner. 
+           Each 32 oz bottle makes 3 gallons of powerful, human-safe cleaner. 
            No VOCs, no endocrine disruptors, no synthetic fragrances. 
            If it doesn't outperform your conventional cleaners on tough grease, mold, and soap scum—we'll refund every penny.
           </p>
