@@ -817,10 +817,80 @@
             
             <p>Over 12,000 people are already on the list. Based on how fast the last batch sold out, I'd recommend getting on it sooner rather than later.</p>
             
-            <!-- Klaviyo Waitlist Form -->
-            <div class="klaviyo-form-Wp8Hza" style="margin: 40px 0;"></div>
+            <!-- Custom Klaviyo Waitlist Form -->
+            <div style="background: white; padding: 40px; margin: 40px 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <form id="klaviyo-waitlist-form" style="max-width: 500px; margin: 0 auto;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="email-input" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px;">Email Address *</label>
+                        <input type="email" id="email-input" name="email" required placeholder="Enter your email address" style="width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; transition: border-color 0.3s;">
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; background: linear-gradient(135deg, #2c5f4f 0%, #3d7a5f 100%); color: white; padding: 18px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-transform: uppercase; letter-spacing: 0.5px;">Join the Waitlist</button>
+                    
+                    <div id="form-message" style="margin-top: 15px; text-align: center; font-size: 14px;"></div>
+                </form>
+            </div>
             
             <p style="text-align: center; color: #e53935; font-weight: 600; margin-top: 20px;">⚡ Next restock expected: December 2025 | Limited quantity available</p>
+            
+            <script>
+            document.getElementById('klaviyo-waitlist-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var email = document.getElementById('email-input').value;
+                var messageDiv = document.getElementById('form-message');
+                var submitButton = e.target.querySelector('button[type="submit"]');
+                
+                // Disable button and show loading
+                submitButton.disabled = true;
+                submitButton.textContent = 'Joining...';
+                messageDiv.innerHTML = '';
+                
+                // Submit to Klaviyo
+                if (window.klaviyo) {
+                    klaviyo.push(['identify', {
+                        '$email': email
+                    }]);
+                    
+                    klaviyo.push(['track', 'Waitlist Signup', {
+                        'Product': 'Moonrise Natural Multi-Surface Cleaner',
+                        'Source': 'Advertorial'
+                    }]);
+                    
+                    // Track Meta Pixel if available
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead', {
+                            content_name: 'Waitlist Signup',
+                            content_category: 'Moonrise Natural Advertorial'
+                        });
+                    }
+                    
+                    // Track Google Analytics if available
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'generate_lead', {
+                            'event_category': 'Waitlist',
+                            'event_label': 'Moonrise Natural Advertorial'
+                        });
+                    } else if (typeof ga !== 'undefined') {
+                        ga('send', 'event', 'Waitlist', 'Signup', 'Moonrise Natural Advertorial');
+                    }
+                    
+                    // Success message
+                    messageDiv.innerHTML = '<p style="color: #2c5f4f; font-weight: 600;">✓ Success! Check your email for confirmation.</p>';
+                    e.target.reset();
+                    submitButton.textContent = 'Joined!';
+                    
+                    setTimeout(function() {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Join the Waitlist';
+                    }, 3000);
+                } else {
+                    messageDiv.innerHTML = '<p style="color: #e53935;">Error: Please try again.</p>';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Join the Waitlist';
+                }
+            });
+            </script>
             
             <h2>Real People, Real Relief</h2>
             
@@ -881,8 +951,61 @@
             <h3 style="text-align: center; font-size: 28px; margin: 50px 0 20px 0;">Don't Miss the Next Restock</h3>
             <p style="text-align: center; font-size: 18px; margin-bottom: 30px;">Join the waitlist now to get exclusive early access and special pricing.</p>
             
-            <!-- Klaviyo Waitlist Form - Second Placement -->
-            <div class="klaviyo-form-Wp8Hza" style="margin: 40px 0;"></div>
+            <!-- Custom Klaviyo Waitlist Form - Second Placement -->
+            <div style="background: white; padding: 40px; margin: 40px 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <form class="klaviyo-waitlist-form-bottom" style="max-width: 500px; margin: 0 auto;">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px;">Email Address *</label>
+                        <input type="email" name="email" required placeholder="Enter your email address" style="width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; transition: border-color 0.3s;">
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; background: linear-gradient(135deg, #2c5f4f 0%, #3d7a5f 100%); color: white; padding: 18px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-transform: uppercase; letter-spacing: 0.5px;">Join the Waitlist</button>
+                    
+                    <div class="form-message-bottom" style="margin-top: 15px; text-align: center; font-size: 14px;"></div>
+                </form>
+            </div>
+            
+            <script>
+            document.querySelector('.klaviyo-waitlist-form-bottom').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var email = e.target.querySelector('input[name="email"]').value;
+                var messageDiv = e.target.querySelector('.form-message-bottom');
+                var submitButton = e.target.querySelector('button[type="submit"]');
+                
+                submitButton.disabled = true;
+                submitButton.textContent = 'Joining...';
+                messageDiv.innerHTML = '';
+                
+                if (window.klaviyo) {
+                    klaviyo.push(['identify', { '$email': email }]);
+                    klaviyo.push(['track', 'Waitlist Signup', {
+                        'Product': 'Moonrise Natural Multi-Surface Cleaner',
+                        'Source': 'Advertorial - Bottom Form'
+                    }]);
+                    
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead', {
+                            content_name: 'Waitlist Signup',
+                            content_category: 'Moonrise Natural Advertorial'
+                        });
+                    }
+                    
+                    messageDiv.innerHTML = '<p style="color: #2c5f4f; font-weight: 600;">✓ Success! Check your email for confirmation.</p>';
+                    e.target.reset();
+                    submitButton.textContent = 'Joined!';
+                    
+                    setTimeout(function() {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Join the Waitlist';
+                    }, 3000);
+                } else {
+                    messageDiv.innerHTML = '<p style="color: #e53935;">Error: Please try again.</p>';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Join the Waitlist';
+                }
+            });
+            </script>
             
             <div style="text-align: center; margin: 50px 0;">
             </div>
